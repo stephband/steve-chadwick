@@ -1,0 +1,183 @@
+
+/*
+This is a CSS comment. Yeah, I know, they are different from HTML comments. That's
+because we are not in HTML now, we are in another language, CSS. CSS stands for
+Cascading Style Sheet. Forget the cascading bit and let's concentrate on the style
+sheet bit.
+
+The way styles work is there's a selector that selects something in your document,
+then a pair of braces filled with rules that tell that thing what to look like.
+
+We're going to start by selecting the body...
+*/
+
+body {
+    /* ...and telling it how much space to put on the left, right, top, and bottom. */
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 3rem;
+    padding-bottom: 6rem;
+}
+
+/* Now we select everything that is a DIRECT CHILD of the body using the child
+selector `>` ... */
+
+body > * {
+    /* ...and we're going tell them never to grow any wider than 720px... */
+    max-width: 45rem;
+
+    /* ..and to always stay in the centre of the page. You can try setting either
+    of these to 0 if you want to see how it looks aligned left or right! */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*
+Oh god, you're saying, what the fuck is a `rem`? `1rem` is equal to 16px most of
+the time. Then why not simply use pixels? Because ultimately as responsible web
+developers we should cede control over how big the fonts are to the end user,
+who may have chosen a larger base font size so they can read them clearly. If we
+specify everything in `px` we take away their control. If we specify sizes in `rem`,
+which means 'Root font size', our page will expand and contract nicely with whatever
+they have set their browser font-size to. You should try resetting the font size
+in your browser preferences and see!
+
+Most browsers have a default font-size of 16px, and 90% of users do not change
+that setting, so you can consider 1rem = 16px for most cases. I size absolutely
+everything in rem (or em), so I am forever using the calculator when I want things
+at specific sizes.
+*/
+
+/*
+Now we're going select some typographic tags (titles like <h1>, <h2>, etc., and
+paragraphs) and tell them how to make their fonts look.
+*/
+
+h1 {
+    font-family: Georgia, serif;
+    font-size: 4rem;
+    font-weight: normal;
+    line-height: 0.98em;
+    letter-spacing: -0.016em;
+}
+
+h2 {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1em;
+    letter-spacing: -0.01em;
+}
+
+h3 {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1em;
+}
+
+h4 {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1.25rem;
+    font-weight: bold;
+    line-height: 1.2em;
+}
+
+p {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1.5em;
+}
+
+img {
+    width: 100%;
+}
+
+/*
+Now we're going select some typographic tags that come AFTER other typographic
+tags using the so-called NEXT SIBLING selector `+`, and we're going to tell them
+how much space they should put between them. This way, we have fine control over
+exactly how our typography is spaced.
+*/
+
+h1 + h2 {
+    margin-top: 3rem;
+}
+
+h4 + h2 {
+    margin-top: 0.8125em;
+}
+
+p + h2 {
+    margin-top: 0.8125em;
+}
+
+h2 + h4 {
+    margin-top: 1.2em;
+}
+
+h4 + h4 {
+    margin-top: 0.6em;
+}
+
+h2 + p {
+    margin-top: 0.75em;
+}
+
+p + p {
+    margin-top: 0.75em;
+}
+
+img + p {
+    margin-top: 1.5rem;
+}
+
+h2 + img {
+    margin-top: 3rem;
+}
+
+h4 + img {
+    margin-top: 1.5rem;
+}
+
+/* Let's give our links a bit of colour when we hover over them, or also, crucially,
+when someone uses the keyboard to focus them. */
+
+a:hover,
+a:focus-visible {
+    color: #46789a;
+}
+
+/*
+Ooo, now some class selectors.
+
+Just like the selectors above, these are selecting things in your document to apply
+style to, but instead of selecting tags, these are selecting classes. We know this
+because class selectors start with a `.`
+*/
+
+.skill-paragraph {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1.25rem;
+    font-weight: bold;
+    line-height: 1.2em;
+}
+
+.action-paragraph {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1em;
+    letter-spacing: -0.01em;
+}
+
+/* And let's not forget some spacings... */
+
+img + .skill-paragraph {
+    margin-top: 3rem;
+}
+
+.skill-paragraph + .action-paragraph {
+    margin-top: ;
+}

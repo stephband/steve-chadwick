@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<!--
+This is an HTML comment.
+
+A comment is not read by the browser. Comments are only seen by you and me,
+the developers reading the source code of the page. They are useful for
+leaving notes about how things work, like I'm doing now. All languages have
+comments. In HTML they start with <!--. You'll have to look at the end of
+this comment to see how they end, I can't write it here because it would
+end this comment, and I'm not finished with it yet.
+
+That thing above, the <!DOCTYPE html>, that told the browser that this is
+an HTML document. It has to be the very first thing in the code, even
+before any comments. It says: 'everything that follows is HTML'. It's
+important, but you can forget about it now, it's just one of those things
+that has to be there.
+
+When you become more familiar with this page, you should probably delete
+all these comments. The browser has to download them all, even if it can't
+read them!
+
+Ok, I'm finished with this comment. Here's how a comment ends:
+-->
+
+<!--
+This next thing, below, the <html> tag, tells the browser 'the HTML
+document begins here'. If you scroll down to the very bottom of this
+document you will see a similar tag </html>, and that says, 'the HTML
+document ends here'. This is how HTML tags work. They come in opening
+and closing pairs: <html> </html>.
+
+Except, and there's always an except on the web, tag that close themselves.
+Images, for example have the tag <img src="url" />. Notice how the slash is
+placed at the end of the tag? This is called a self-closing tag.
+
+So, two types of HTML tag – tags that open and close:
+
+<p>Paragraph text</p>
+
+And tags that close themselves:
+
+<img src="url" />
+
+Easy. You'd think so, but you'll find a lot of mistakes are made, as a
+beginner, by forgetting to close HTML tags.
+-->
+<html lang="en" is="sparky" class="js">
+
+    <!--
+    Next we have the document <head>. The <head> is not visible in the browser.
+    Everything in the head is hidden. It's used to provide meta information
+    about the document, and to load in stylesheets so the browser knows how to
+    display the content of the body before the <body> arrives.
+
+    Before the <body> arrives? I hear you say.
+
+    Yes, before the <body> arrives. You see, an HTML document is displayed in
+    parts, as it is being downloaded. You know how when you go to a URL in your
+    browser you see bits of the page first, and then other bits of the page,
+    and then finally the whole page? The HTML is being downlaoded and displayed
+    in parts, starting at the top and going down.
+
+    In this document, for example, the browser will have to download this
+    comment before it even gets to the <head> or the <body>. It's quite a long
+    comment, so you should probably delete it to speed up page load.
+    -->
+    <head>
+        <!-- Don't worry about these things, leave them here, forget about them -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+
+        <!-- This stuff is what appears in google search results... sometimes...
+        depending on stuff. These exist since the very first 1992 version of
+        HTML, they are part of the fabric of the web -->
+        <meta name="author" content="Steve Chadwick" />
+        <meta name="description" content="Front-end development. Music." />
+
+        <!-- This is the text that appears in the tab or title bar of the browser window -->
+        <title>Steve Chadwick</title>
+
+        <!-- This tells the browser to load the little icon that appears in the tab
+        or URL bar. You need to make an image for this. -->
+        <link rel="shortcut icon" href="images/favicon.svg">
+
+        <!-- This tells the browser to load some CSS stylesheets that tell the
+        browser how to make the document look. Ignore the first one please, the
+        second one is where you are going to write your styles. Notice it points
+        to a file, style.css, that I have put in the css/ folder -->
+        <link rel="stylesheet" href="./css/normalise.css">
+        <link rel="stylesheet" href="./css/style.css">
+
+        <!--
+        Now we are getting to non-essential stuff. Delete at will.
+
+        These tags are what gets displayed in twitter or Facebook when someone
+        shares the URL to this page. You can get rid of this if you don't want
+        to be bothered with it. Or leave it here until you decide to do
+        something with it. It's not really 'standard' HTML, you have to go to
+        Facebook and Twitter to learn about what you can put in these meta tags
+        -->
+        <meta name="twitter:card" content="summary"></meta>
+        <meta name="twitter:site" content="@stephband"></meta>
+        <meta property="og:url" content="https://steve.chadwick/" />
+        <meta property="og:title" content="Steve Chadwick" />
+        <meta property="og:description" content="Trumpet stuff." />
+        <meta property="og:image" content="https://steve.chadwick/images/share-img.png" />
+    </head>
+
+    <!--
+    Right, now we are coming to the meat and potatoes. The <body>. This is
+    the content of your document. Most things inside the body are displayed
+    by the browser.
+
+    I have copied the body of your txti, since it seemed an easy place to
+    start, and just cleaned it up a little. And added some comments.
+    -->
+    <body>
+        <h1>Steve Chadwick - Trumpet and <em>other instruments</em></h1>
+        <h2>Performer, studio musician, composer, arranger, educator.</h2>
+
+        <!--
+        I have downloaded your photos and put them in the ./images folder. After
+        all, why rely on imgur being available when we can serve them from the same
+        place as this document and know that they will be available whenever this
+        document is?Hopefully it's easy to see what I've done here, and you can
+        add more as you like.
+
+        This is a bit of an aside, but if you have loads of images, I have a
+        thing that could help. It's not for right now, but in the future we could
+        install this if you like:
+
+        https://stephen.band/slide-show
+        -->
+        <img src="./images/steve-chadwick-gloomy.jpg" alt="Me">
+        <p><strong>I specialise in jazz and improvised music but I am equally as
+        comfortable reading in a big band, show band, orchestra or other.</strong></p>
+
+        <h2>About me</h2>
+        <p>I grew up in the vicinity of Manchester, UK, and now live on the island
+        of Gotland, Sweden arriving here via Washington DC, London and Berlin. I
+        studied for a degree in music in Salford in the 90's and have worked
+        professionally as a musician (and all that entails) ever since. Folk,
+        jazz, big band, funk, pop, orchestral, improv etc..etc...</p>
+
+        <p>Other instruments: alto sax, trombone, accordion, percussion, ukulele
+        (all to different standards but not at the same level as my trumpeting, yet!)</p>
+
+        <!-- This is bad HTML. Above good, below bad.
+
+        Why? Because it's a whole series of titles. <h2></h2> is a title, <h4></h4>
+        is a title, and there are a whole load of them, one after the other, without
+        any paragraphs. We say that this HTML is 'not semantic', because you are
+        using the titles for how they look, rather than what they mean. And HTML
+        is supposed to be all about what something means, not how it looks.
+
+        How it looks is the job of your stylesheet, style.css.
+        -->
+        <h2>So......</h2>
+        <h4>Do you need a trumpeter for pretty much anything? <em>(I <strong>love</strong> to travel)</em></h4>
+        <h4>Need a versatile musician for your theatre band or something else?  <em>(I fear nothing!)</em></h4>
+        <h4>Need some horn lines arranging and recording for your track? <em>(I can record for you remotely)</em></h4>
+        <h2>It's as simple as this website, give me a call or send me an email.</h2>
+        <h4>0046793043729</h4>
+        <h4>stevetchadwick@gmail.com</h4>
+        <h4><a href="https://soundcloud.com/stevechadwick">https://soundcloud.com/stevechadwick</a></h4>
+        <h4><a href="https://soundcloud.com/runwiththehare">https://soundcloud.com/runwiththehare</a></h4>
+        <img src="./images/steve-chadwick-playing.jpg" alt="Me again">
+
+        <!-- So how do we do these paragraphs the right way? This is where things
+        start to get funky. All html tags can have a class attribute, that looks
+        like this:
+
+        <p class="class-name">Paragraph text</p>
+
+        That text inside the class attribute, "class-name", that gives your
+        stylesheet, style.css, a 'class' to hook onto. Anything with that class
+        gets the styles specified in the stylesheet for that class. You are free
+        to make class names up (there are restrictions about what a class can be
+        made of but if you stick to letters and dashes you will avoid any problems).
+
+        Now would be a good time to open style.css side-by-side with this document
+        and have a look at the next couple of paragraphs I'm leaving here as an
+        example. The classes for these are at the bottom of style.css.
+        I'll leave you to sort out the abomination above!
+        -->
+
+        <p class="skill-paragraph">Do you need a trumpeter for pretty much anything? <em>(I <strong>love</strong> to travel)</em></p>
+        <p class="action-paragraph">It's as simple as this website, give me a call or send me an email.</p>
+
+        <!--
+        There are many schools of thought about how to use classes the 'right' way.
+        They cause wars between CSS developers. Don't pay too much heed to anything
+        you read online about the 'right' way to do classes. There is no right way.
+        You are free to use them how you want. You have enough here to get started.
+        -->
+    </body>
+</html>

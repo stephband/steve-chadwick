@@ -1,0 +1,584 @@
+
+/*
+Steve, please IGNORE this file. Close it now. It's too much, too soon.
+
+Basically, it makes sure that all browsers look the same before you start
+writing your actual styles on top, and it helps make things look neat when
+printed too. You should write your style in style.css.
+*/
+
+/* html.css
+
+   Much borrowed from Normalize.css:
+   http://github.com/necolas/normalize.css
+
+   Also parts from blueprint:
+   http://blueprintcss.org/
+
+   And a few ideas from html5boilerplate:
+   http://html5boilerplate.com/
+*/
+
+:root {
+    min-height: 100%;
+
+    /* Setting a background on <html> means that a background
+       on <body> does not get set on <html>. Win. */
+    color: #000000;
+    background-color: white;
+
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-behavior */
+    scroll-behavior: smooth;
+    scroll-padding: 0;
+}
+
+/* Hide templates in browsers where they are not natively supported. This is
+   important, and there is no time when we don't want this to be true, so
+   give it the strongest possible selector. */
+:root > body template {
+    display: none !important;
+}
+
+/* Make fullscreen elements fill the screen */
+
+:-webkit-full-screen {
+    width: 100vw !important;
+    height: 100vh !important;
+    margin: 0 !important;
+}
+
+:-moz-full-screen {
+    width: 100vw !important;
+    height: 100vh !important;
+    margin: 0 !important;
+}
+
+:-ms-fullscreen {
+    width: 100vw !important;
+    height: 100vh !important;
+    margin: 0 !important;
+}
+
+:fullscreen {
+    width: 100vw !important;
+    height: 100vh !important;
+    margin: 0 !important;
+}
+
+/* Normalise elements */
+
+html, body, div, span,
+object, iframe, canvas, img, svg, audio, video, track, math,
+h1, h2, h3, h4, h5, h6, hr, p, blockquote, pre,
+a, abbr, address, code, time, kbd, samp,
+br, del, dfn, em, img, q, dl, dt, dd, ol, ul, li,
+slot, table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, details, dialog, figure, figcaption, footer, header,
+nav, main, section, summary,
+form, fieldset, label, legend, input, output, button, select, textarea,
+progress, meter,
+::before, ::after {
+    /* Here's what makes Bolt a little different. Border box.
+       It'a a breath of fresh air to work with. */
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+            box-sizing: border-box;
+
+    /* Set the dimensions of backgrounds to the limits of the
+       padding box. */
+    -webkit-background-origin: padding-box;
+       -moz-background-origin: padding;
+            background-origin: padding-box;
+
+    /* Default to backgrounds that don't repeat. */
+    background-repeat: no-repeat;
+}
+
+html,
+:root {
+    /* Prevents iOS text size adjust after orientation change, without disabling user zoom
+       www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+article,
+aside,
+details,
+dialog,
+figcaption,
+figure,
+footer,
+header,
+main,
+nav,
+section,
+summary {
+    display: block;
+}
+
+audio,
+canvas,
+video {
+    display: inline-block;
+}
+
+p,
+dl,
+input,
+menu,
+ol,
+ul,
+dd,
+pre {
+    /* margins set differently in IE6/7, Chrome */
+    margin: auto;
+}
+
+hr {
+    /* Things collapse to 0 width when they are children of grids. Margin 0
+       avoids this. */
+    margin: 0;
+}
+
+code,
+kbd,
+samp,
+pre {
+    /* Correct the inheritance and scaling of font size */
+    font-family: monospace, monospace;
+
+    /* Correct the odd `em` font sizing */
+    font-size: 1em;
+}
+
+menu,
+ol,
+ul {
+    /* paddings set differently in IE6/7 */
+    padding: 0;
+}
+
+a {
+    /* Remove the gray background on active links in IE 10 */
+    background-color: transparent;
+
+    /* Remove gaps in links underline in iOS 8+ and Safari 8+ */
+    -webkit-text-decoration-skip: objects;
+}
+
+:focus {
+    /* Outline displays oddly in Chrome */
+    outline: thin dotted;
+}
+
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+
+img,
+svg,
+canvas,
+video,
+object,
+embed,
+iframe {
+    /* Media are most often used as block level elements. */
+    display: block;
+    border: 0;
+}
+
+img,
+svg,
+canvas,
+video {
+    /* Prevent media from overflowing parent by default */
+    max-width: 100%;
+    height: auto;
+}
+
+img {
+    /* Don't stretch images */
+    object-fit: cover;
+}
+
+audio:not([controls]) {
+    /* Prevents modern browsers from displaying 'audio' without controls
+       Remove excess height in iOS5 devices */
+    display: none;
+    height: 0;
+}
+
+figure {
+    margin: auto;
+}
+
+figure > img,
+figure > svg,
+figure > canvas,
+figure > video {
+    width: 100%;
+}
+
+table {
+    border-spacing: 0;
+    /* Tables don't get border-radius if they are set to
+       border-collapse: collapse; */
+    border-collapse: separate;
+
+    /* Remove most spacing between table cells. They still need
+       'cellspacing="0"' in the markup. */
+    /*border-collapse: collapse;*/
+}
+
+caption,
+th,
+td {
+    text-align: left;
+    font-weight: normal;
+}
+
+table,
+td,
+th {
+    vertical-align: top;
+}
+
+
+html {
+    font-size: 100%; /* 16px, normally */
+}
+
+body,
+button {
+    /* Enable kerning in FF and WebKit. */
+    /* text-rendering: optimizeLegibility; */
+    text-rendering: geometricPrecision;
+}
+
+pre,
+code,
+kbd,
+output,
+samp {
+    /* Corrects font family set oddly in IE6, S4/5, Chrome
+       en.wikipedia.org/wiki/User:Davidgothberg/Test59 */
+    font-family: monospace, serif;
+    font-family: Monaco, 'Lucida Console', monospace;
+}
+
+code,
+kbd,
+samp {
+    white-space: nowrap;
+}
+
+pre {
+    /* www.pathf.com/blogs/2008/05/formatting-quoted-code-in-blog-posts-css21-white-space-pre-wrap/ */
+    white-space: pre; /* CSS2 */
+    white-space: pre-wrap; /* CSS2.1 */
+    /*white-space: pre-line; /* CSS3 (and 2.1 as well, actually) */
+    word-wrap: break-word; /* IE */
+}
+
+pre > code {
+    line-height: inherit;
+    white-space: inherit;
+}
+
+a:focus,
+a:hover {
+    text-decoration: underline;
+}
+
+a {
+    text-decoration: underline;
+    color: inherit;
+}
+
+[href] {
+    /* j.mp/webkit-tap-highlight-color */
+    -webkit-tap-highlight-color: rgba(0,0,0,0.25);
+}
+
+/* Block elements */
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+    -webkit-hyphens: manual;
+       -moz-hyphens: manual;
+        -ms-hyphens: manual;
+            hyphens: manual;
+}
+
+hr {
+    /* IE9 does not properly get border-color for <hr>s that
+       have border-width > 1px. Use background-color. */
+    height: 1px;
+    border-width: 0;
+    margin-bottom: -1px;
+    background-color: currentcolor;
+}
+
+ul                { list-style-type: disc; }
+ol                {
+    list-style-type: decimal;
+    /* Chrome renders them outside by default, causing a
+       difference between FF and Chrome */
+    list-style-position: inside;
+}
+
+dl {
+    display: grid;
+    grid-column-gap: 1.125rem;
+    grid-template-columns: max-content 1fr;
+    grid-auto-columns: 1fr;
+    align-items: flex-end;
+}
+
+dl > dt {
+    grid-column: 1 / span 1;
+    max-width: 40vw;
+}
+
+blockquote        { font-style: italic; font-family: Georgia, serif; }
+blockquote::before { content: "\201C"; font-size: 3em; color: #484848; float: left; margin-left: -0.6em; line-height: 0.92em; }
+
+p:empty,
+h1:empty,
+h2:empty,
+h3:empty,
+h4:empty,
+h5:empty,
+h6:empty,
+ul:empty,
+ol:empty,
+dl:empty,
+li:empty,
+dt:empty,
+dd:empty,
+blockquote:empty {
+    /* Hide any typographic block that is empty. This is a bit
+       contraversial, but helps correct style errors in blocks
+       of user input where the HTML has ended up being dodgy -
+       perhaps thanks to a CMS editor, for example. */
+    display: none;
+}
+
+p > img,
+p > svg,
+p > video,
+p > canvas,
+p > object,
+p > embed,
+p > iframe,
+li > img,
+li > svg,
+li > video,
+li > canvas,
+li > object,
+li > embed,
+li > iframe,
+dd > img,
+dd > svg,
+dd > video,
+dd > canvas,
+dd > object,
+dd > embed,
+dd > iframe {
+    /* Don't allow media to break out of container bounds. */
+    max-width: 100%;
+}
+
+/* Inline elements */
+
+abbr[title]       { border-bottom: 1px dotted; }
+
+b,
+strong,
+dfn               { font-weight: bold; }
+em,
+dfn               { font-style: italic; }
+
+/* Match the l-height of <small> to the x-height of surrounding text. */
+small             { font-size: 0.727272em; font-weight: 400; }
+sup,
+sub               { line-height: 0; font-size: 0.8333em; position: relative; vertical-align: baseline; }
+sup               { top: -0.5em; }
+sub               { bottom: -0.25em; }
+
+q                 { quotes: none; }
+q::before,
+q::after           { content: ''; content: none; }
+
+del               { opacity: 0.5; text-decoration: line-through; }
+
+/* Tables */
+
+table             { width: 100%; }
+tfoot             { font-style: italic; }
+caption           { background-color: inherit; }
+
+
+
+
+
+
+
+dd                { margin: 0; }
+* + ul,
+* + ol,
+* + dl,
+* + blockquote    { margin-top: 1.25rem; }
+li                { margin-bottom: 0;}
+
+blockquote::before { font-size: 3em; line-height: 0.84em; margin-left: -0.6em; }
+
+/* Inline elements */
+
+sup,
+sub               { font-size: 0.6em; line-height: 0; }
+
+abbr              { letter-spacing: 0.03125em; }
+
+/* Tables */
+
+th,
+td,
+caption           { padding: 4px 10px 4px 5px; }
+
+/* Indentation */
+
+ul,
+ol                { margin-left: 0; }
+
+blockquote        { margin-left: 2.6667em; }
+
+
+[hidden] {
+    /* styling for 'hidden' attribute not present in IE7/8/9, FF3, S4. */
+    display: none !important;
+}
+
+/* IE has some really intrusive 'clear' icons in text inputs. Set them to 0x0
+   rather than display: none because...
+   http://stackoverflow.com/questions/14007655/remove-ie10s-clear-field-x-button-on-certain-inputs/14739092#14739092 */
+::-ms-clear {
+    width: 0;
+    height: 0;
+}
+
+[placeholder]:focus::-webkit-input-placeholder {
+    /* Get rid of persistent placeholders in webkit, where the placeholder
+       hangs around like an old fart. More here:
+       http://adactio.com/journal/6147/
+    */
+    color: transparent;
+}
+
+[placeholder]:focus::-moz-placeholder {
+    /* Get rid of persistent placeholders in Firefox. */
+    color: transparent;
+}
+
+[draggable] {
+    /* Make draggable elements draggable in WebKit */
+    -webkit-user-drag: element;
+
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+
+    cursor: move;
+}
+
+[draggable="false"] {
+     -webkit-user-drag: none;
+
+    -webkit-user-select: text;
+       -moz-user-select: text;
+        -ms-user-select: text;
+
+    cursor: inherit;
+}
+
+[draggable="false"][href] {
+    cursor: pointer;
+}
+
+
+/* Default print styles. */
+
+@page {
+    margin: 0.5cm;
+}
+
+@media print {
+    html,
+    body {
+        background: transparent;
+        text-shadow: none !important;
+    }
+
+    /* Display external links after their text. */
+    a[href^="http://"],
+    a[href^="http://"]:visited,
+    a[href^="https://"],
+    a[href^="https://"]:visited {
+        text-decoration: underline;
+    }
+
+    a[href^="http://"]::after,
+    a[href^="https://"]::after {
+        content: " (" attr(href) ") ";
+        font-size: 0.9167em;
+        text-transform: lowercase;
+        opacity: 0.8;
+    }
+
+    pre,
+    blockquote,
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        page-break-after: avoid;
+    }
+
+    /* css-discuss.incutio.com/wiki/Printing_Tables */
+    thead {
+        display: table-header-group;
+    }
+
+    p, h2, h3, h4, h5, h6 {
+        orphans: 3;
+        widows: 3;
+    }
+}
